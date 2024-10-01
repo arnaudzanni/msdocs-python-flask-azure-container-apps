@@ -5,6 +5,8 @@ import os
 # python -c 'import secrets; print(secrets.token_hex())'
 SECRET_KEY = os.getenv('AZURE_SECRET_KEY')
 
+BACKEND_URL = os.getenv("AZURE_BACKEND_URL")
+
 # Configure allowed host names that can be served and trusted origins for Azure Container Apps.
 ALLOWED_HOSTS = ['.azurecontainerapps.io'] if 'RUNNING_IN_PRODUCTION' in os.environ else []
 CSRF_TRUSTED_ORIGINS = ['https://*.azurecontainerapps.io'] if 'RUNNING_IN_PRODUCTION' in os.environ else []
